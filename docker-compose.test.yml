@@ -2,8 +2,7 @@ version: "3.6"
 
 services:
   sut:
-    build:
-        context: ./
+    image: zaherg/laravel-test:latest
     command: /var/test/run_tests
     environment:
       - "APP_NAME=Laravel"

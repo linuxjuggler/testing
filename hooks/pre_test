@@ -1,17 +1,11 @@
 #!/usr/bin/env bash
 
-# echo "installing dockerize"
+echo "installing dockerize"
 
-# DOCKERIZE_VERSION=v0.6.1
+DOCKERIZE_VERSION=v0.6.1
 
-# apk add wget && \
-# wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
-# tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
-# rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
-# 
-
-cat /proc/version
-
-cat /etc/issue
-
-cat /etc/os-release
+apt-get update && \
+apt-get install -y wget && \
+wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
