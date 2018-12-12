@@ -20,7 +20,7 @@ services:
     healthcheck:
       disable: true
     env_file:
-      - .env
+      - ./src/.env
     restart: unless-stopped
 
   database:
