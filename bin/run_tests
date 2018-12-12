@@ -2,7 +2,7 @@
 
 echo "waiting for the database to be ready"
 
-/var/www/bin/wait-for-it.sh database:3689
+/var/www/bin/wait-for-it.sh database:3306
 
 echo "Run tests"
 
