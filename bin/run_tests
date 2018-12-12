@@ -1,5 +1,14 @@
 #!/usr/bin/env sh
 
+echo "installing Dockerize from github"
+
+DOCKERIZE_VERSION v0.6.1
+
+apk update && apk add --no-cache openssl wget && \
+wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
+rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
 echo "waiting for the database to be ready"
 
 # export TIMEOUT=50 && /var/test/wait-for-it database:3306
