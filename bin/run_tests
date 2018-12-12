@@ -1,0 +1,9 @@
+#!/usr/bin/env sh
+
+echo "waiting for the database to be ready"
+
+/var/www/bin/wait-for-it.sh database:3689
+
+echo "Run tests"
+
+php /var/www/vendor/bin/phpunit

@@ -1,10 +1,10 @@
-version: "3.8"
+version: "3.6"
 
 services:
   sut:
     build:
         context: ./
-    command: run_tests.sh
+    command: ./bin/run_tests
     environment:
       - "APP_NAME=Laravel"
       - "APP_ENV=local"
