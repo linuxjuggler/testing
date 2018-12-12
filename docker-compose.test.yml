@@ -1,4 +1,7 @@
-sut:
+version: "3.8"
+
+services:
+  sut:
   build: .
   command: run_tests.sh
   environment:
@@ -34,7 +37,7 @@ sut:
     - "PUSHER_APP_CLUSTER=mt1"
     - "SWOOLE_HTTP_PORT=80"
     - "SWOOLE_HTTP_HOST=0.0.0.0"
-  depends_on:
+  links:
     - database
 
 database:
