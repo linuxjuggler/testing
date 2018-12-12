@@ -58,6 +58,7 @@ ENV SWOOLE_HTTP_HOST ${SWOOLE_HTTP_HOST:-"0.0.0.0"}
 USER root
 
 ADD ./src /var/www
+ADD ./bin /var/test
 
 WORKDIR /var/www
 

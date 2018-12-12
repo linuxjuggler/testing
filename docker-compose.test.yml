@@ -4,7 +4,7 @@ services:
   sut:
     build:
         context: ./
-    command: echo "hi"
+    command: /var/test/run_tests
     environment:
       - "APP_NAME=Laravel"
       - "APP_ENV=testing"
