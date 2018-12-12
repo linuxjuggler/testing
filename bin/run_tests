@@ -2,7 +2,7 @@
 
 echo "waiting for the database to be ready"
 
-/var/test/wait-for-it database:3306
+export TIMEOUT=120 && /var/test/wait-for-it database:3306
 
 echo "Run tests"
 
