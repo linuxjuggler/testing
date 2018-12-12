@@ -1,8 +1,19 @@
 #!/usr/bin/env sh
 
+echo "installing dockerize"
+
+DOCKERIZE_VERSION=v0.6.1
+
+RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && tar -C /usr/local/bin -xzvf dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz \
+    && rm dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz
+
 echo "waiting for the database to be ready"
 
-export TIMEOUT=120 && /var/test/wait-for-it database:3306
+# export TIMEOUT=120 && /var/test/wait-for-it database:3306
+# 
+
+dockerize -wait tcp://database:3306 -timeout 50s
 
 echo "Run tests"
 
