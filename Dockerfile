@@ -2,6 +2,7 @@ FROM zaherg/php-swoole:7.2
 ARG BUILD_DATE
 ARG VCS_REF
 ARG IMAGE_NAME
+ARG DOCKER_REPO
 
 LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       Description="Lightweight PHP 7.2 container based on Alpine Linux with Swoole installed and enabled by default." \
@@ -9,6 +10,7 @@ LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       org.label-schema.description="Lightweight PHP 7.2 container based on Alpine Linux with Swoole installed and enabled by default." \
       org.label-schema.build-date=$BUILD_DATE \
       org.label-schema.vcs-url="https://github.com/linuxjuggler/lumen-starter.git" \
+      org.label-schema.build-repo=$DOCKER_REPO \
       org.label-schema.vcs-ref=$VCS_REF \
       org.label-schema.schema-version="1.0.0"
 

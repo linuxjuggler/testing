@@ -1,2 +1,4 @@
 /.git
 /src/vendor
+/bin/build
+/bin/docker_run
