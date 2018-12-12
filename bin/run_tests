@@ -2,7 +2,7 @@
 
 echo "Installing Dockerize from github"
 
-export DOCKERIZE_VERSION v0.6.1
+export DOCKERIZE_VERSION=v0.6.1
 
 apk update && apk add --no-cache openssl wget && \
 wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-alpine-linux-amd64-$DOCKERIZE_VERSION.tar.gz && \
