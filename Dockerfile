@@ -57,9 +57,12 @@ ENV SWOOLE_HTTP_HOST ${SWOOLE_HTTP_HOST:-"0.0.0.0"}
 
 USER root
 
-ADD ./ /var/www
+ADD ./src /var/www
+
+WORKDIR /var/www
 
 RUN composer global require hirak/prestissimo && \
 	composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader
+
 
 CMD ["php", "artisan","swoole:http","start"]

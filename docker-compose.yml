@@ -10,7 +10,7 @@ services:
     networks:
       - backend
     volumes:
-      - ./:/var/www
+      - ./src:/var/www
     labels:
       - "traefik.backend=web"
       - "traefik.frontend.rule=Host:web.docker.local"
