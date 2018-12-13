@@ -39,12 +39,13 @@ services:
       - "SWOOLE_HTTP_HOST=0.0.0.0"
     networks:
       - backend
-    depends_on:
-      - database
+    # depends_on:
+    #   - database
 
   database:
     image: mysql:5.7
     hostname: database
+    container_name: database
     ports:
       - "3306:3306"
     environment:
