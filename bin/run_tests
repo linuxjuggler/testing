@@ -1,4 +1,9 @@
 #!/usr/bin/env sh
+#
+
+echo "Checking the networks"
+
+cat /etc/hosts
 
 echo "Installing Dockerize from github"
 
