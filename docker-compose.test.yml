@@ -39,6 +39,8 @@ services:
       - "SWOOLE_HTTP_HOST=0.0.0.0"
     networks:
       - backend
+    depends_on:
+      - database
 
   database:
     image: mysql:5.7
