@@ -22,4 +22,7 @@ dockerize -wait tcp://database:3306 -wait tcp://cache:6379 -timeout 50s
 
 echo "Running tests"
 
-php /var/www/vendor/bin/phpunit --testdox  --coverage-text --colors=never
+# Since am using a docker image without xDebug Coverage wont work
+# php /var/www/vendor/bin/phpunit --testdox  --coverage-text --colors=never
+
+php /var/www/vendor/bin/phpunit --testdox
