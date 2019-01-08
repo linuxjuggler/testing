@@ -18,7 +18,7 @@ echo "Waiting for the database to be ready"
 
 # export TIMEOUT=50 && /var/test/wait-for-it database:3306
 
-dockerize -wait tcp://database:3306 -timeout 50s
+dockerize -wait tcp://database:3306 -wait tcp://cache:6379 -timeout 50s
 
 echo "Running tests"
 

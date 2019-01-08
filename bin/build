@@ -13,7 +13,9 @@ export IMAGE=${PWD##*/}
 
 export IMAGE_COMMIT=$IMAGE:$COMMIT_HASH
 
-export IMAGE_NAME=$IMAGE:$TAG && docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
+export IMAGE_NAME=$IMAGE:$TAG
+
+docker build --build-arg BUILD_DATE=`date -u +"%Y-%m-%dT%H:%M:%SZ"` \
              --build-arg VCS_REF=$COMMIT_HASH \
              --build-arg IMAGE_NAME=$IMAGE_NAME \
                          -t $IMAGE_NAME .
