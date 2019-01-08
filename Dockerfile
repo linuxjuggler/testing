@@ -1,9 +1,9 @@
 FROM zaherg/php-swoole:7.2
 
-ARG BUILD_DATE \
-	VCS_REF \
-	IMAGE_NAME \
-	DOCKER_REPO
+ARG BUILD_DATE
+ARG VCS_REF
+ARG IMAGE_NAME
+ARG DOCKER_REPO
 
 LABEL Maintainer="Zaher Ghaibeh <z@zah.me>" \
       Description="Lightweight PHP 7.2 container based on Alpine Linux with Swoole installed and enabled by default." \
