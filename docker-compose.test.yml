@@ -22,7 +22,7 @@ services:
       - "QUEUE_CONNECTION=sync"
       - "SESSION_DRIVER=file"
       - "SESSION_LIFETIME=120"
-      - "REDIS_HOST=127.0.0.1"
+      - "REDIS_HOST=redis"
       - "REDIS_PASSWORD=null"
       - "REDIS_PORT=6379"
       - "MAIL_DRIVER=smtp"
@@ -38,7 +38,8 @@ services:
       - "SWOOLE_HTTP_PORT=80"
       - "SWOOLE_HTTP_HOST=0.0.0.0"
     links:
-    - database
+      - database
+      - redis
 
   database:
     image: mysql:5.7
@@ -50,3 +51,9 @@ services:
       - "MYSQL_DATABASE=docker"
       - "MYSQL_USER=docker"
       - "MYSQL_PASSWORD=secret"
+
+  cache:
+    image: redis:alpine
+    hostname: redis
+    ports:
+      - "6379:6379"
