@@ -39,7 +39,7 @@ services:
       - "SWOOLE_HTTP_HOST=0.0.0.0"
     links:
       - database
-      - redis
+      - cache
 
   database:
     image: mysql:5.7
